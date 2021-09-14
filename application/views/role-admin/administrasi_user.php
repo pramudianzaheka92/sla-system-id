@@ -4,8 +4,8 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
+				<h4 class="modal-title">Tambah User</h4>
 				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-				<h4 class="modal-title">Tambah</h4>
 			</div>
 			<form class="form-horizontal" action="<?php echo base_url('administrasi/add_user')?>" method="post"
 				enctype="multipart/form-data" role="form">
@@ -36,8 +36,9 @@
 							</select>
 						</div>
 					</div>
+
 					<div class="form-group">
-						<label class="col-lg-12 col-sm-12 control-label">password</label>
+						<label class="col-lg-12 col-sm-12 control-label">Password</label>
 						<div class="col-lg-12">
 							<input type="date" class="form-control" id="password" name="password">
 						</div>
@@ -59,8 +60,8 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
+				<h4 class="modal-title">Edit Data User</h4>
 				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-				<h4 class="modal-title">Edit</h4>
 			</div>
 			<form class="form-horizontal" action="<?php echo base_url('administrasi/edit_user')?>" method="post"
 				enctype="multipart/form-data" role="form">
@@ -91,7 +92,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-lg-12 col-sm-12 control-label">password</label>
+						<label class="col-lg-12 col-sm-12 control-label">Password</label>
 						<div class="col-lg-12">
 							<input type="date" class="form-control" id="password" name="password">
 						</div>
@@ -114,8 +115,8 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
+				<h4 class="modal-title">Anda Yakin Ingin Hapus Ini?</h4>
 				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-				<h4 class="modal-title">Anda Yakin Hapus Ini?</h4>
 			</div>
 			<form class="form-horizontal" action="<?php echo base_url('administrasi/delete_user')?>" method="post"
 				enctype="multipart/form-data" role="form">
