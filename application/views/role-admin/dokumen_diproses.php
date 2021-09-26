@@ -4,12 +4,12 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1>Dokumen Diprosess</h1>
+					<h1>Dokumen Diproses</h1>
 				</div>
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
 						<li class="breadcrumb-item"><a href="<?php echo site_url('#')?>">Beranda Sekkom</a></li>
-						<li class="breadcrumb-item active">Dokumen Diprosess</li>
+						<li class="breadcrumb-item active">Dokumen Diproses</li>
 					</ol>
 				</div>
 			</div>
@@ -23,7 +23,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Dokumen Diprosess</h3>
+                <h3 class="card-title">Dokumen Diproses</h3>
                 <div class="card-tools">
                 </div>
               </div>
@@ -36,7 +36,7 @@
                       <th scope="col">No</th>
                       <th scope="col">Nomor Document</th>
                       <th scope="col">Debitur</th>
-                      <th scope="col">Diterukan oleh</th>
+                      <th scope="col">Diteruskan oleh</th>
                       <th scope="col">Tanggal Dibuat</th>
                       <th scope="col">Terakhir Diubah</th>
                       <th scope="col">File</th>

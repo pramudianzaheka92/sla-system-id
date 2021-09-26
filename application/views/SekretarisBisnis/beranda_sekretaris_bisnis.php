@@ -40,7 +40,7 @@
 										<th scope="col">No</th>
 										<th scope="col">Nomor Document</th>
 										<th scope="col">Debitur</th>
-										<th scope="col">Diterukan oleh</th>
+										<th scope="col">Diteruskan oleh</th>
 										<th scope="col">Tanggal Dibuat</th>
 										<th scope="col">Terakhir Diubah</th>
 										<th scope="col">File</th>
@@ -60,7 +60,7 @@
 									
 										<td>
 											<a href="<?=site_url('DokumenDiproses/detail/'.$row->id_document)?>" class="btn btn-success">
-												<i class="far fa-file nav-icon"></i>  Lihat Detail
+												<i class="far fa-file nav-icon"></i>  Detail
 											</a>
 											<form action="<?php echo base_url('BerandaSekretarisBisnis/detail');?>"
 												method="get">
@@ -72,9 +72,6 @@
 												<button type="submit" name="submit"
 													class="btn btn-primary">Ubah</button>
 											</form>
-
-
-										
 										</td>
 									</tr>
 									<?php };?>

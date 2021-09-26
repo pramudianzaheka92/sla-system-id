@@ -3,8 +3,8 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
 				<h4 class="modal-title">Tambah</h4>
+				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>	
 			</div>
 			<form class="form-horizontal" action="<?php echo base_url('BerandaSekkom/add_document')?>" method="post"
 				enctype="multipart/form-data" role="form">
@@ -31,7 +31,7 @@
 					</div>
 
 					<div class="form-group">
-						<label class="col-lg-12 col-sm-12 control-label">Diterukan</label>
+						<label class="col-lg-12 col-sm-12 control-label">Diteruskan</label>
 						<div class="col-lg-12">
 							<select name="id_penerus" id="id_penerus" class="form-control">
 								<?php foreach($pengguna as $row){;?>
@@ -40,11 +40,6 @@
 							</select>
 						</div>
 					</div>
-
-
-
-
-
 				</div>
 				<div class="modal-footer">
 
@@ -61,8 +56,8 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
 				<h4 class="modal-title">Edit</h4>
+				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
 			</div>
 			<form class="form-horizontal" action="<?php echo base_url('BerandaSekkom/edit_document')?>" method="post"
 				enctype="multipart/form-data" role="form">
@@ -91,7 +86,7 @@
 					</div>
 
 					<div class="form-group">
-						<label class="col-lg-12 col-sm-12 control-label">Diterukan</label>
+						<label class="col-lg-12 col-sm-12 control-label">Diteruskan</label>
 						<div class="col-lg-12">
 							<select name="id_penerus" id="id_penerus" class="form-control">
 								<?php foreach($pengguna as $row){;?>
@@ -118,8 +113,8 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
+				<h4 class="modal-title">Anda Yakin Ingin Menghapus Ini?</h4>
 				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-				<h4 class="modal-title">Anda Yakin Hapus Ini?</h4>
 			</div>
 			<form class="form-horizontal" action="<?php echo base_url('BerandaSekkom/delete_document')?>" method="post"
 				enctype="multipart/form-data" role="form">
@@ -188,7 +183,7 @@
 										<th scope="col">No</th>
 										<th scope="col">Nomor Document</th>
 										<th scope="col">Debitur</th>
-										<th scope="col">Diterukan oleh</th>
+										<th scope="col">Diteruskan oleh</th>
 										<th scope="col">Tanggal Dibuat</th>
 										<th scope="col">Terakhir Diubah</th>
 										<th scope="col">File</th>

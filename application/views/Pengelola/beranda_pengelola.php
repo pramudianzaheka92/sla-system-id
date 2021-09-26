@@ -40,7 +40,7 @@
 										<th scope="col">No</th>
 										<th scope="col">Nomor Document</th>
 										<th scope="col">Debitur</th>
-										<th scope="col">Diterukan oleh</th>
+										<th scope="col">Diteruskan oleh</th>
 										<th scope="col">Tanggal Dibuat</th>
 										<th scope="col">Terakhir Diubah</th>
 										<th scope="col">File</th>
@@ -110,7 +110,7 @@
 										<th scope="col">No</th>
 										<th scope="col">Nomor Document</th>
 										<th scope="col">Debitur</th>
-										<th scope="col">Diterukan oleh</th>
+										<th scope="col">Diteruskan oleh</th>
 										<th scope="col">Tanggal Dibuat</th>
 										<th scope="col">Terakhir Diubah</th>
 										<th scope="col">File</th>
@@ -180,7 +180,7 @@
 										<th scope="col">No</th>
 										<th scope="col">Nomor Document</th>
 										<th scope="col">Debitur</th>
-										<th scope="col">Diterukan oleh</th>
+										<th scope="col">Diteruskan oleh</th>
 										<th scope="col">Tanggal Dibuat</th>
 										<th scope="col">Terakhir Diubah</th>
 										<th scope="col">File</th>

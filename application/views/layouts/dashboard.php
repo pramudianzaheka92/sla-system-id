@@ -13,7 +13,7 @@
 						<div class="inner">
 							<h3>150</h3>
 
-							<p>Document</p>
+							<p>Jumlah Dokumen Diproses</p>
 						</div>
 						<div class="icon">
 							<i class="fa fa-file"></i>
@@ -27,7 +27,7 @@
 						<div class="inner">
 							<h3>150</h3>
 
-							<p>Document</p>
+							<p>Jumlah Dokumen Selesai</p>
 						</div>
 						<div class="icon">
 							<i class="fa fa-file"></i>
