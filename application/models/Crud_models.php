@@ -8,6 +8,14 @@ class Crud_models extends CI_Model
         return $this->db->get();
     }
 
+    public function totalDokumenDiproses(){
+        return $this->db->count_all("tb_history_document");
+    }
+
+    public function totalDokumenSelesai(){
+        return $this->db->count_all("tb_document_analyst");
+    }
+
     public function get_data_document($tbl,$field,$value){
         $this->db->select('*');
         $this->db->where($field,$value);

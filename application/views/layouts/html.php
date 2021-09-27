@@ -29,6 +29,9 @@
 
    <?=$content?>
 
+   <!-- Untuk membuat perhitungan card secara otomatis -->
+   <!--?php include 'dashboard.php'?-->
+
   <?php include 'footer.php'?>
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">

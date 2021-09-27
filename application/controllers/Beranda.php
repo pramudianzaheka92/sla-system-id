@@ -14,8 +14,19 @@ class Beranda extends CI_Controller {
 	
 	public function index()
 	{
+		$jumlahDokumenDiproses = $this->crud_models->totalDokumenDiproses();
+		$jumlahDokumenSelesai = $this->crud_models->totalDokumenSelesai();
+		
+
+		$data = array(
+			'jumDokumenDiproses' => $jumlahDokumenDiproses,
+			'jumDokumenSelesai' => $jumlahDokumenSelesai
+			
+		);
+
 		// Mengalihkan ke fungsi read
-		$data['content'] = $this->load->view('layouts/dashboard','',TRUE);
+		$data['content'] = $this->load->view('layouts/dashboard',$data,TRUE);
+		
 		$this->load->view('layouts/html', $data);
 	}
 
