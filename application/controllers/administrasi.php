@@ -23,11 +23,26 @@ class Administrasi extends CI_Controller {
     }
 
     public function add_user(){
+        //setting library upload
+		$config['upload_path']          = 'assets/upload_foto/';
+        $config['allowed_types']        = 'gif|jpg|png';
+	    $config['max_size']             = 20000;
+	    $this->load->library('upload', $config);
+
+        $npp = $this->input->post('npp');
+        $nama = $this->input->post('nama');
+        $posisi = $this->input->post('posisi');
+		$uploadfile = $this->upload->do_upload('uploadfile');
+        $password = $this->input->post('password');
+
+
+        
         $data = array(
             "npp"	        => $this->input->post('npp'),
             "nama"          => $this->input->post('nama'),
-            "posisi"  => $this->input->post('posisi'),
-            "password"      =>md5($this->input->post('password'))
+            "posisi"        => $this->input->post('posisi'),
+            "foto"          => $this->input->post('foto'),
+            "password"      => md5($this->input->post('password'))
         );
 
         if($this->crud_models->add_data($data,'tb_pengguna')){
@@ -46,7 +61,8 @@ class Administrasi extends CI_Controller {
         $data       = array(
                         "npp"	        => $this->input->post('npp'),
                         "nama"          => $this->input->post('nama'),
-                        "posisi"  => $this->input->post('posisi'),
+                        "posisi"        => $this->input->post('posisi'),
+                        "foto"          => $this->input->post('foto'),
                         "password"      =>md5($this->input->post('password'))
                     );
 

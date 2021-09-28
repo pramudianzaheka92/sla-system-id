@@ -38,6 +38,13 @@
 					</div>
 
 					<div class="form-group">
+						<label class="col-lg-12 col-sm-12 control-label">Foto</label>
+						<div class="col-lg-12">
+							<input type="file" class="form-control" id="foto" name="foto">
+						</div>
+					</div>
+
+					<div class="form-group">
 						<label class="col-lg-12 col-sm-12 control-label">Password</label>
 						<div class="col-lg-12">
 							<input type="date" class="form-control" id="password" name="password">
@@ -70,7 +77,7 @@
 						<label class="col-lg-12 col-sm-12 control-label">NPP</label>
 						<div class="col-lg-12">
 							<input type="text" class="form-control" id="npp" name="npp">
-              <input type="hidden" id="id" name="id">
+							<input type="hidden" id="id" name="id">
 						</div>
 					</div>
 					<div class="form-group">
@@ -91,6 +98,14 @@
 							</select>
 						</div>
 					</div>
+
+					<div class="form-group">
+						<label class="col-lg-12 col-sm-12 control-label">Foto</label>
+						<div class="col-lg-12">
+							<input type="file" class="form-control" id="foto" name="foto">
+						</div>
+					</div>
+
 					<div class="form-group">
 						<label class="col-lg-12 col-sm-12 control-label">Password</label>
 						<div class="col-lg-12">
@@ -183,6 +198,7 @@
 										<th scope="col">NPP</th>
 										<th scope="col">Nama</th>
 										<th scope="col">Posisi</th>
+										<th scope="col">Foto</th>
 										<th scope="col">Aksi</th>
 									</tr>
 								</thead>
@@ -194,6 +210,10 @@
 										<td><?php echo $row->nama;?></td>
 										<td>
 										<?php echo $row->nama_posisi;?>
+										</td>
+										<td><a href="<?php echo base_url('assets/upload_foto/'.$row->foto);?>" width="70px" height="70px"></a>
+										</td>
+
 										</td>
 										<td>
 											<a href="javascript:;" data-id="<?php echo $row->id ?>" data-npp="<?php echo $row->npp ?>"
