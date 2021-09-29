@@ -87,7 +87,6 @@
 						</div>
 					</div>
 
-
 					<div class="form-group">
 						<label class="col-lg-12 col-sm-12 control-label">Posisi</label>
 						<div class="col-lg-12">
@@ -102,6 +101,7 @@
 					<div class="form-group">
 						<label class="col-lg-12 col-sm-12 control-label">Foto</label>
 						<div class="col-lg-12">
+							<div id="gambar"></div>
 							<input type="file" class="form-control" id="foto" name="foto">
 						</div>
 					</div>
@@ -209,15 +209,15 @@
 										<td><?php echo $row->npp;?></td>
 										<td><?php echo $row->nama;?></td>
 										<td>
-										<?php echo $row->nama_posisi;?>
+											<?php echo $row->nama_posisi;?>
 										</td>
-										<td><a href="<?php echo base_url('assets/upload_foto/'.$row->foto);?>" width="70px" height="70px"></a>
-										</td>
-
+										<td>
+											<img src="<?php echo base_url('./assets/upload_foto/'.$row->foto);?>" alt="" width="90px" height="90px"></a>
 										</td>
 										<td>
 											<a href="javascript:;" data-id="<?php echo $row->id ?>" data-npp="<?php echo $row->npp ?>"
 												data-nama="<?php echo $row->nama ?>" data-posisi="<?php echo $row->posisi ?>"
+												data-foto="<?php echo $row->foto ?>"
 												data-tgl_lahir="<?php echo $row->tgl_lahir ?>" data-toggle="modal" data-target="#edit-data"
 												class="show-modal btn btn-info btn-sm">
 												<i class="fa fa-edit"></i>
@@ -249,6 +249,7 @@
 			modal.find('#npp').attr("value", div.data('npp'));
 			modal.find('#nama').attr("value", div.data('nama'));
 			modal.find('#posisi').attr("value", div.data('posisi'));
+			modal.find('#foto').attr("value", div.data('foto'))
 			modal.find('#tgl_lahir').attr("value", div.data('tgl_lahir'));
 
 		});

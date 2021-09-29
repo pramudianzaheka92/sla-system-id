@@ -23,58 +23,97 @@ class Administrasi extends CI_Controller {
     }
 
     public function add_user(){
-        //setting library upload
-		$config['upload_path']          = 'assets/upload_foto/';
-        $config['allowed_types']        = 'gif|jpg|png';
-	    $config['max_size']             = 20000;
-	    $this->load->library('upload', $config);
 
         $npp = $this->input->post('npp');
         $nama = $this->input->post('nama');
         $posisi = $this->input->post('posisi');
-		$uploadfile = $this->upload->do_upload('uploadfile');
         $password = $this->input->post('password');
 
+        //setting library upload
+		$config['upload_path']          = './assets/upload_foto/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+	    $config['max_size']             = 40000;
+        $config['file_name']            = $_FILES['foto']['name'];
+                        $this->upload->initialize($config);
 
-        
-        $data = array(
-            "npp"	        => $this->input->post('npp'),
-            "nama"          => $this->input->post('nama'),
-            "posisi"        => $this->input->post('posisi'),
-            "foto"          => $this->input->post('foto'),
-            "password"      => md5($this->input->post('password'))
-        );
+	    $this->load->library('upload', $config);
 
-        if($this->crud_models->add_data($data,'tb_pengguna')){
-            $this->session->set_flashdata('info', 'data berhasil di tambah!');				
+        if ( ! $this->upload->do_upload('foto')) {
+			$this->session->set_flashdata('danger', 'Foto Harus Di Upload !');				
             redirect('Administrasi/user');
+		}else{
+            $upload_data = $this->upload->data();
+            $file_name = $upload_data['file_name'];
 
-        }else{
-            $this->session->set_flashdata('danger', 'kesalahan menginput data');				
-            redirect('Administrasi/user');
+            $data = array(
+                "npp"	        => $this->input->post('npp'),
+                "nama"          => $this->input->post('nama'),
+                "posisi"        => $this->input->post('posisi'),
+                "foto"          => $file_name,
+                "password"      => md5($this->input->post('password'))
+            );
+
+            if($this->crud_models->add_data($data,'tb_pengguna')){
+                $this->session->set_flashdata('info', 'Data berhasil di tambah!');				
+                redirect('Administrasi/user');
+    
+            }else{
+                $this->session->set_flashdata('danger', 'Kesalahan menginput data');				
+                redirect('Administrasi/user');
+            }
         }
 
     }
 
     public function edit_user(){
-        $id 		= $this->input->post('id');
-        $data       = array(
-                        "npp"	        => $this->input->post('npp'),
-                        "nama"          => $this->input->post('nama'),
-                        "posisi"        => $this->input->post('posisi'),
-                        "foto"          => $this->input->post('foto'),
-                        "password"      =>md5($this->input->post('password'))
-                    );
 
-        if($this->crud_models->edit_data($data,$id,'tb_pengguna')){
-            $this->session->set_flashdata('info', 'data berhasil di update!');				
-            redirect('Administrasi/user');
+        $npp = $this->input->post('npp');
+        $nama = $this->input->post('nama');
+        $posisi = $this->input->post('posisi');
+        $password = $this->input->post('password');
 
+        if ($_FILES['foto']['name']!=""){
+
+            //setting library upload
+            $config['upload_path']          = './assets/upload_foto/';
+            $config['allowed_types']        = 'gif|jpg|png|jpeg';
+            $config['max_size']             = 40000;
+            $config['file_name']            = $_FILES['foto']['name'];
+                            $this->upload->initialize($config);
+
+            $this->load->library('upload', $config);
+            
+            if ( ! $this->upload->do_upload('foto')) {
+                $this->session->set_flashdata('danger', 'Foto Harus Di Upload !');				
+                redirect('Administrasi/user');
+            }else{
+
+                $upload_data = $this->upload->data();
+                $file_name = $upload_data['file_name'];
+
+                $id 		= $this->input->post('id');
+                $data       = array(
+                                "npp"	        => $this->input->post('npp'),
+                                "nama"          => $this->input->post('nama'),
+                                "posisi"        => $this->input->post('posisi'),
+                                "foto"          => $file_name,
+                                "password"      => md5($this->input->post('password'))
+                            );
+        
+                if($this->crud_models->edit_data($data,$id,'tb_pengguna')){
+                    $this->session->set_flashdata('info', 'Data berhasil di update!');				
+                    redirect('Administrasi/user');
+        
+                }else{
+                    $this->session->set_flashdata('danger', 'Kesalahan menginput data');				
+                    redirect('Administrasi/user');
+                }
+            }
         }else{
-            $this->session->set_flashdata('danger', 'kesalahan menginput data');				
+            $file_name = $this->input->post('old');
+
             redirect('Administrasi/user');
         }
-
     }
 
     public function delete_user(){

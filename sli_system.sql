@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Sep 2021 pada 08.14
+-- Waktu pembuatan: 29 Sep 2021 pada 17.13
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.2.34
 
@@ -72,7 +72,7 @@ CREATE TABLE `tb_document` (
 --
 
 INSERT INTO `tb_document` (`id`, `id_pengguna`, `no_document`, `debitur`, `file_nk3`, `file_2`, `status`, `date_document`, `created_at`, `updated_at`, `no_skk`) VALUES
-(3, '1001', 'OPK-001', 'Eka Pramudianzah', 'Modul_3D-_Merancang_Antarmuka_Pemakai.pdf', 'Modul_3D-_Merancang_Antarmuka_Pemakai1.pdf', '12', NULL, '2021-09-26 16:10:03', '2021-09-26 16:46:28', 'SKK-001'),
+(3, '1001', 'OPK-001', 'Eka Pramudianzah', 'Modul_3D-_Merancang_Antarmuka_Pemakai.pdf', 'Modul_3D-_Merancang_Antarmuka_Pemakai1.pdf', '13', NULL, '2021-09-26 16:10:03', '2021-09-28 15:14:08', 'SKK-001'),
 (4, '1002', 'OPK-002', 'Ramadhan', 'E-certificate_GA.pdf', NULL, '4', '2021-09-26', '2021-09-26 16:16:35', '2021-09-26 16:21:16', NULL);
 
 -- --------------------------------------------------------
@@ -146,7 +146,8 @@ INSERT INTO `tb_history_document` (`id`, `id_document`, `id_pengguna`, `id_pener
 (40, '3', '1006', '1005', NULL, '2021-09-26 16:35:31', '2021-09-26 16:35:31', NULL),
 (41, '3', '1005', '1008', NULL, '2021-09-26 16:36:01', '2021-09-26 16:36:01', NULL),
 (42, '3', '1008', '1003', '  Sudah sangat sesuai dan lengkap', '2021-09-26 16:44:38', '2021-09-26 16:44:38', NULL),
-(43, '3', '1003', '1004', 'Sesuai', '2021-09-26 16:46:28', '2021-09-26 16:46:28', '1');
+(43, '3', '1003', '1004', 'Sesuai', '2021-09-26 16:46:28', '2021-09-26 16:46:28', '1'),
+(44, '3', '1004', '1005', 'ACC', '2021-09-28 15:14:08', '2021-09-28 15:14:08', NULL);
 
 -- --------------------------------------------------------
 
@@ -186,6 +187,7 @@ CREATE TABLE `tb_pengguna` (
   `nama` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `posisi` int(11) DEFAULT NULL,
   `tgl_lahir` date DEFAULT NULL,
+  `foto` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `password` text COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -193,15 +195,16 @@ CREATE TABLE `tb_pengguna` (
 -- Dumping data untuk tabel `tb_pengguna`
 --
 
-INSERT INTO `tb_pengguna` (`id`, `npp`, `nama`, `posisi`, `tgl_lahir`, `password`) VALUES
-(1, '1001', 'admin', 1, '2021-08-21', '55e8b0af8c4b85c8570218dc7b3f3d40'),
-(3, '1002', 'Sekkom', 2, '2021-08-21', '55e8b0af8c4b85c8570218dc7b3f3d40'),
-(4, '1003', 'Seketaris', 3, '2021-08-21', '55e8b0af8c4b85c8570218dc7b3f3d40'),
-(6, '1004', 'DGM / GM', 4, '2021-08-21', '55e8b0af8c4b85c8570218dc7b3f3d40'),
-(7, '1005', 'Pemimpin Kelompok', 5, '2021-08-21', '55e8b0af8c4b85c8570218dc7b3f3d40'),
-(10, '1006', 'Penglola', 6, '2021-08-21', '55e8b0af8c4b85c8570218dc7b3f3d40'),
-(11, '1007', 'Analyst', 7, '2021-08-21', '55e8b0af8c4b85c8570218dc7b3f3d40'),
-(12, '1008', 'Bisnis', 8, '2021-08-21', '55e8b0af8c4b85c8570218dc7b3f3d40');
+INSERT INTO `tb_pengguna` (`id`, `npp`, `nama`, `posisi`, `tgl_lahir`, `foto`, `password`) VALUES
+(1, '1001', 'admin', 1, '2021-08-21', 'Orang_Random.jpeg', '6478e48dc345b522c643cde593c61b91'),
+(33, '1002', 'Eka Pramudianzah', 1, '2021-09-29', 'IMG_20210825_093135.jpg', '6478e48dc345b522c643cde593c61b91'),
+(34, '1003', 'Herman', 2, '2021-09-29', 'Orang_Random_Kedua.jpeg', '6478e48dc345b522c643cde593c61b91'),
+(35, '1004', 'Jodikal Pomalingo', 3, '2021-09-29', 'Selfie_+_KTM_Jodikal.jpeg', '6478e48dc345b522c643cde593c61b91'),
+(36, '1005', 'Lantang', 4, '2021-09-29', 'Orang_Random_Ketiga.jpg', '6478e48dc345b522c643cde593c61b91'),
+(37, '1006', 'Hendra Pratik Aditama', 5, '2021-09-29', 'Foto_Hendra.jpg', '6478e48dc345b522c643cde593c61b91'),
+(38, '1007', 'Ramzy Alfin', 7, '2021-09-29', 'Foto_Ramzy.jpeg', '6478e48dc345b522c643cde593c61b91'),
+(39, '1008', 'Bunga', 8, '2021-09-29', 'Foto_BCL_1.jpg', '6478e48dc345b522c643cde593c61b91'),
+(40, '1009', 'Alex Morgan', 6, '2021-09-29', 'Foto_Alex_Morgan.jpg', '6478e48dc345b522c643cde593c61b91');
 
 -- --------------------------------------------------------
 
@@ -266,7 +269,7 @@ ALTER TABLE `tb_document_analyst`
 -- AUTO_INCREMENT untuk tabel `tb_history_document`
 --
 ALTER TABLE `tb_history_document`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_level_user`
@@ -278,7 +281,7 @@ ALTER TABLE `tb_level_user`
 -- AUTO_INCREMENT untuk tabel `tb_pengguna`
 --
 ALTER TABLE `tb_pengguna`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
