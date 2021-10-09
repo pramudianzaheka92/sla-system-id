@@ -3,7 +3,7 @@
     	<!-- Sidebar user (optional) -->
     	<div class="user-panel mt-3 pb-3 mb-3 d-flex">
     		<div class="image">
-    			<img src="<?=template('dist/img/user2-160x160.jpg')?>" class="img-circle elevation-2" alt="User Image">
+    			<img src="<?=base_url("assets/upload_foto/".$this->session->userdata("foto"));?>" class="img-circle elevation-2" alt="<?php echo $this->session->userdata('nama');?>">
     		</div>
     		<div class="info">
     			<a href="#" class="d-block"><?php echo $this->session->userdata('nama');?></a>

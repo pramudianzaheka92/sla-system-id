@@ -15,7 +15,8 @@
                                         'npp' => $row->npp,
                                         'nama' => $row->nama,
                                         'password' => $row->password,
-                                        'posisi'   => $row->posisi
+                                        'posisi'   => $row->posisi,
+										'foto'	=> $row->foto
 									);
 						$this->session->set_userdata($sess);
 						$this->session->set_flashdata('info', 'login sukses');
