@@ -1,10 +1,8 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-
-
 	<!-- Main content -->
 	<section class="content">
-		<div class="container-fluid">
+		<div class="container-fluid" style="padding: 5px;">
 			<div class="row">
 				<!-- left column -->
 				<div class="col-lg-6 col-6">

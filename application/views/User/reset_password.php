@@ -23,8 +23,8 @@
           <!-- left column -->
           <div class="col-md-12">
             <!-- general form elements -->
-            <div class="card card-orange">
-              <div class="card-header">
+            <div class="card">
+              <div class="card-header bg-table">
                 <h3 class="card-title">Formulir Reset Password</h3>
               </div>
               <form method="post">

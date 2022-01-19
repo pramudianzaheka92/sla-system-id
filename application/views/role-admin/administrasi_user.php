@@ -23,8 +23,6 @@
 							<input type="text" class="form-control" id="nama" name="nama">
 						</div>
 					</div>
-
-
 					<div class="form-group">
 						<label class="col-lg-12 col-sm-12 control-label">Posisi</label>
 						<div class="col-lg-12">
@@ -175,12 +173,11 @@
 
 	<!-- Main content -->
 	<section class="content">
-    
 		<div class="container-fluid">
       <a href="javascript:;" class="add-modal btn btn-info btn-sm" data-toggle="modal" data-target="#add-tb">
         <i class="fa fa-plus"></i>
       </a>
-			<div class="row">
+			<div class="row" style="padding: 10px;">
 				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
@@ -188,7 +185,6 @@
 							<div class="card-tools">
 							</div>
 						</div>
-            
 						<div class="card-body">
 							<table class="table table-striped" id="example1" width="100%" data-page-length='5'
 								data-length-change='false'>
